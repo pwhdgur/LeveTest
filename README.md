@@ -2,141 +2,141 @@
 Level 1 1번~10번
 
 1. 2016년 a월 b일은 무슨 요일일까요?라는 문제
-1.1
-function solution(a, b) {
-  return ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'][new Date(2016, a - 1, b).getDay()];
-}
+	1.1
+	function solution(a, b) {
+	  return ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'][new Date(2016, a - 1, b).getDay()];
+	}
 
-1.2
-var week = ['일', '월', '화', '수', '목', '금', '토'];
-var dayOfWeek = week[new Date('2016-07-28').getDay()];
-console.log(week);
-console.log(dayOfWeek);
-return dayOfWeek;
+	1.2
+	var week = ['일', '월', '화', '수', '목', '금', '토'];
+	var dayOfWeek = week[new Date('2016-07-28').getDay()];
+	console.log(week);
+	console.log(dayOfWeek);
+	return dayOfWeek;
 
 2. 가운데 글자 가져오기 : abcde에서는 c를 가져오고 qwer에서는 we 두 글자를 가져오는 문제
-2.1
-function solution(s) {
-  return s.substr(Math.ceil(s.length / 2) - 1, s.length % 2 === 0 ? 2 : 1);
-}
+	2.1
+	function solution(s) {
+	  return s.substr(Math.ceil(s.length / 2) - 1, s.length % 2 === 0 ? 2 : 1);
+	}
 
-2.2
-function solution(s) {
-    var answer = '';
-    if(s.length % 2 ===0){
-        answer = answer.concat(s[s.length/2 -1]);
-        answer = answer.concat(s[s.length/2]);
-    }else{
-        answer = answer.concat(s[Math.floor(s.length/2)]);
-    }
-    return answer;
-}
+	2.2
+	function solution(s) {
+	    var answer = '';
+	    if(s.length % 2 ===0){
+		answer = answer.concat(s[s.length/2 -1]);
+		answer = answer.concat(s[s.length/2]);
+	    }else{
+		answer = answer.concat(s[Math.floor(s.length/2)]);
+	    }
+	    return answer;
+	}
 
 3. 같은 숫자는 싫어 : [1,1,3,3,0,1,1]이면 [1,3,0,1]로 연속되는 중복을 제거하는 문제
 
-3.1
-function solution(arr) {
-  return arr.filter((v, i) => v !== arr[i + 1]);
-}
+	3.1
+	function solution(arr) {
+	  return arr.filter((v, i) => v !== arr[i + 1]);
+	}
 
 4. 나누어 떨어지는 숫자 배열 : [5,9,7,10]과 5가 주어지면 [5, 10]을 리턴해야 합니다. 아무것도 없으면 [-1]을 리턴
 
-4.1
-function solution(arr, divisor) {
-  const answer = arr.filter(el => el % divisor === 0);
-  return answer.length ? answer.sort((p, c) => p - c) : [-1];
-}
+	4.1
+	function solution(arr, divisor) {
+	  const answer = arr.filter(el => el % divisor === 0);
+	  return answer.length ? answer.sort((p, c) => p - c) : [-1];
+	}
 
-4.2
-const solution = (arr, divisor) => {
-    var answer = [];
-    answer = arr.filter((arrList) => arrList%divisor === 0);
-    if(answer.length == 0) {
-        return [-1];
-    } else {
-        return answer.sort((a, b) => a - b);	//작은 숫자순서, b-a 경우 큰숫자순서
-    }
-}
+	4.2
+	const solution = (arr, divisor) => {
+	    var answer = [];
+	    answer = arr.filter((arrList) => arrList%divisor === 0);
+	    if(answer.length == 0) {
+		return [-1];
+	    } else {
+		return answer.sort((a, b) => a - b);	//작은 숫자순서, b-a 경우 큰숫자순서
+	    }
+	}
 
 5. 두 정수 사이의 합 : 3과 5가 주어지면 3+4+5를 해서 리턴
 
-5.1
-function solution(a, b) {
-  a > b && ([a, b] = [b, a]);
-  return Array(b - a + 1).fill().map((v, i) => a + i).reduce((a, c) => a + c);
-}
+	5.1
+	function solution(a, b) {
+	  a > b && ([a, b] = [b, a]);
+	  return Array(b - a + 1).fill().map((v, i) => a + i).reduce((a, c) => a + c);
+	}
 
-5.2
-function solution(a, b) {
-    var answer = 0;
-    var small, big;
-    if(a > b){
-        big = a;
-        small = b;
-    }else if(b > a){
-        big = b;
-        small = a;
-    }else{
-        answer = a;
-    } 
-    for(var i =small ; i <= big ; i++){
-        answer +=i;
-    }
-    return answer;
-}
+	5.2
+	function solution(a, b) {
+	    var answer = 0;
+	    var small, big;
+	    if(a > b){
+		big = a;
+		small = b;
+	    }else if(b > a){
+		big = b;
+		small = a;
+	    }else{
+		answer = a;
+	    } 
+	    for(var i =small ; i <= big ; i++){
+		answer +=i;
+	    }
+	    return answer;
+	}
 
 6. 문자열 내 마음대로 정렬하기 : ['abce', 'abcd', 'cdx']와 2가 주어지면 2번째 인덱스 글자(c, c, x)를 기준으로 정렬합니다. 만약 2번째 인덱스 글자가 서로 같다면(c, c처럼) 사전순으로 정렬합니다. abce와 abcd를 사전순으로 정렬하는 것이죠.
 
-6.1
-function solution(strings, n) {
-  return strings.sort((p, c) => p[n] === c[n] ? p.localeCompare(c) : p[n].localeCompare(c[n]))
-}
+	6.1
+	function solution(strings, n) {
+	  return strings.sort((p, c) => p[n] === c[n] ? p.localeCompare(c) : p[n].localeCompare(c[n]))
+	}
 
-6.2 문자열로 구성된 리스트 strings와, 정수 n이 주어졌을 때, 각 문자열의 인덱스 n번째 글자를 기준으로 오름차순 정렬하려 합니다. 
-예를 들어 strings가 [sun, bed, car]이고 n이 1이면 각 단어의 인덱스 1의 문자 u, e, a로 strings를 정렬합니다.
-function solution(strings, n) {
-    strings.sort(function(a,b){
-        var first = a[n];
-        var second = b[n];
-        if(first === second){
-            return (a > b) - (a < b);
-        }else{
-            return (first > second) - (first < second);
-        }
-    })
-    return strings;
-}
+	6.2 문자열로 구성된 리스트 strings와, 정수 n이 주어졌을 때, 각 문자열의 인덱스 n번째 글자를 기준으로 오름차순 정렬하려 합니다. 
+	예를 들어 strings가 [sun, bed, car]이고 n이 1이면 각 단어의 인덱스 1의 문자 u, e, a로 strings를 정렬합니다.
+	function solution(strings, n) {
+	    strings.sort(function(a,b){
+		var first = a[n];
+		var second = b[n];
+		if(first === second){
+		    return (a > b) - (a < b);
+		}else{
+		    return (first > second) - (first < second);
+		}
+	    })
+	    return strings;
+	}
 
 7. 문자열 내 p와 y의 개수 
 대문자와 소문자가 섞여있는 문자열 s가 주어집니다. s에 ‘p’의 개수와 ‘y’의 개수를 비교해 같으면 True, 다르면 False를 return 하는 solution를 완성하세요. 
 ‘p’, ‘y’ 모두 하나도 없는 경우는 항상 True를 리턴합니다. 단, 개수를 비교할 때 대문자와 소문자는 구별하지 않습니다.
 
-7.1
-function solution(s){
-    let strArr = s.toUpperCase().split('');
-    if(!strArr.includes('P') && !strArr.includes('Y')){
-        return true;
-    }
-    let count1 =0;
-    let count2 =0;
-    for(let i=0; i<strArr.length; i++){
-        if(strArr[i] === 'P'){
-            count1++;
-        }else if(strArr[i]==='Y'){
-            count2++;
-        }
-    }
-    if(count1 === count2){
-        return true;
-    }else{
-        return false;
-    }
-}
+	7.1
+	function solution(s){
+	    let strArr = s.toUpperCase().split('');
+	    if(!strArr.includes('P') && !strArr.includes('Y')){
+		return true;
+	    }
+	    let count1 =0;
+	    let count2 =0;
+	    for(let i=0; i<strArr.length; i++){
+		if(strArr[i] === 'P'){
+		    count1++;
+		}else if(strArr[i]==='Y'){
+		    count2++;
+		}
+	    }
+	    if(count1 === count2){
+		return true;
+	    }else{
+		return false;
+	    }
+	}
 
-7.2
-function numPY(s){
-  return s.toUpperCase().split("P").length ===  s.toUpperCase().split("Y").length;
-}
+	7.2
+	function numPY(s){
+	  return s.toUpperCase().split("P").length ===  s.toUpperCase().split("Y").length;
+	}
 
 8. 문자열 내림차순으로 배치하기 
 문자열을 역순으로 정렬합니다. 대문자는 소문자보다 뒤에 위치해야 합니다. 예를 들어 Zbcdefg는 gfedcbZ가 됩니다.
