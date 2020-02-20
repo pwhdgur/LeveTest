@@ -156,22 +156,22 @@ Level 1 1번~10번
 문자열의 길이가 4 또는 6이고 숫자로만 구성되어 있는지 확인합니다.
 예를들어 s 가 a234 이면 False 를 리턴하고 1234 라면 True 를 리턴하면 됩니다.
 
-9.1
-function alpha_string46(s) {
-  return s.length == 4 || s.length == 6 ? !isNaN(s) : false;
-}
+	9.1
+	function alpha_string46(s) {
+	  return s.length == 4 || s.length == 6 ? !isNaN(s) : false;
+	}
 
 10. 서울에서 김서방 찾기 
 ['Jane', 'Kim']이란 배열이 있으면 Kim의 위치를 찾으면 됩니다.
 
-10.1
-function findKim(seoul){
-  var idx = seoul.indexOf('Kim');
-  
-  // indexOf 메소드는 배열 내의 요소의 최초의 인덱스를 반환
-  
-  return "김서방은 " + idx + "에 있다";
-}
+	10.1
+	function findKim(seoul){
+	  var idx = seoul.indexOf('Kim');
+
+	  // indexOf 메소드는 배열 내의 요소의 최초의 인덱스를 반환
+
+	  return "김서방은 " + idx + "에 있다";
+	}
 
 11. 소수 찾기 
 1~n 사이의 소수의 개수를 반환
@@ -201,99 +201,99 @@ function solution(n) {
 12. 수박수박수박수박수 
 3이면 수박수, 4면 수박수박, 5면 수박수박수를 리턴하면 됩니다.
 
-12.1
-function solution(n) {
-  return '수박'.repeat(n).substr(0, n);
-}
+	12.1
+	function solution(n) {
+	  return '수박'.repeat(n).substr(0, n);
+	}
 
 13. 문자열을 정수로 바꾸기
-function solution(s) {
-  return parseInt(s);
-}
+	function solution(s) {
+	  return parseInt(s);
+	}
 
 14. 시저 암호 
 문자열 "s"와 거리 n을 입력받아 "s"를 n만큼 민 암호문을 만드는 함수, solution을 완성해 보세요.
 (AB는 1만큼 밀면 BC가 되고, AB를 3만큼 밀면 DE가 됩니다. z는 1만큼 밀면 a가 됩니다. 공백은 그대로 공백이고요.)
 
-14.1
-function solution(s, n) {
-    let result = ""; 
-    for (let i=0; i<s.length;i++) { 
-        if ( s[i] == ' ' ) 
-            result += ' ' 
-        else 
-            result += String.fromCharCode( (s.charCodeAt(i)>90)
-                    ? (s.charCodeAt(i)+n-97)%26+97 
-                    : (s.charCodeAt(i)+n-65)%26+65 ) 
-    } 
-    return result;
-}
+	14.1
+	function solution(s, n) {
+	    let result = ""; 
+	    for (let i=0; i<s.length;i++) { 
+		if ( s[i] == ' ' ) 
+		    result += ' ' 
+		else 
+		    result += String.fromCharCode( (s.charCodeAt(i)>90)
+			    ? (s.charCodeAt(i)+n-97)%26+97 
+			    : (s.charCodeAt(i)+n-65)%26+65 ) 
+	    } 
+	    return result;
+	}
 
 15. 약수의 합
 자연수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수
 (12의 약수는 1, 2, 3, 4, 6, 12입니다. 이를 모두 더하면 28입니다.)
 
-15.1
-function solution(n) {
-    let answer = 0;
-    for (let i = 0; i <= n; i++) {
-        if( n % i === 0) { answer += i}
-    }
-    return answer
-}
+	15.1
+	function solution(n) {
+	    let answer = 0;
+	    for (let i = 0; i <= n; i++) {
+		if( n % i === 0) { answer += i}
+	    }
+	    return answer
+	}
 
 16. 이상한 문자 만들기 
 단어의 짝수번째 문자는 대문자로, 홀수번째 문자는 소문자로 바꿉니다. try hello world는 TrY HeLlO WoRlD가 되네요.
 
-16.1
-function solution(s) {
-  return s.split(' ').map(w => (
-    w.split('').map((v, i) => (i % 2 ? v.toLowerCase() : v.toUpperCase())).join('')
-  )).join(' ');
-}
+	16.1
+	function solution(s) {
+	  return s.split(' ').map(w => (
+	    w.split('').map((v, i) => (i % 2 ? v.toLowerCase() : v.toUpperCase())).join('')
+	  )).join(' ');
+	}
 
 17. 자릿수 더하기 
 자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들기
 (예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.)
 
-17.1
-function solution(n)
-{
-    var answer = 0;
-    var m=String(n);
-​
-    for(var i=0; i<m.length; i++){
-        answer+=parseInt(m[i]);
-    }
-    return answer;
-}
+	17.1
+	function solution(n)
+	{
+	    var answer = 0;
+	    var m=String(n);
+	​
+	    for(var i=0; i<m.length; i++){
+		answer+=parseInt(m[i]);
+	    }
+	    return answer;
+	}
 
 18. 자연수 뒤집어 배열로 만들기
 12345를 뒤집어 [5,4,3,2,1]로 만들면 됩니다. 
 
-18.1
-function solution(n) {
-    return n.toString().split('').reverse().map(o => o = parseInt(o));
-}
+	18.1
+	function solution(n) {
+	    return n.toString().split('').reverse().map(o => o = parseInt(o));
+	}
 
 19. 정수 내림차순으로 배치하기
 118372면 내림차순으로 873211을 리턴하면 됩니다.
 
-19.1
-function solution(n) {
-  // p - c : 오름차순
-  return +String(n).split('').sort((p, c) => c - p).join('');
-}
+	19.1
+	function solution(n) {
+	  // p - c : 오름차순
+	  return +String(n).split('').sort((p, c) => c - p).join('');
+	}
 
 20. 정수 제곱근 판별
 n이 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, 아니라면 -1을 리턴합니다.
 설명 : 임의의 정수 n에 대해, n이 어떤 정수 x의 제곱인지 아닌지 판단하려 합니다. n이 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 정수 x의 제곱이 아니라면 -1을 리턴하는 함수
 (121은 정수 11의 제곱이므로, (11+1)를 제곱한 144를 리턴, 3은 정수의 제곱이 아니므로, -1을 리턴)
 
-20.1
-function solution(n) {
-    return (Number.isInteger(Math.sqrt(n))) ? Math.pow((Math.sqrt(n)+1), 2) : -1;
-}
+	20.1
+	function solution(n) {
+	    return (Number.isInteger(Math.sqrt(n))) ? Math.pow((Math.sqrt(n)+1), 2) : -1;
+	}
 
 21. 제일 작은 수 제거하기 
 arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수
@@ -317,29 +317,29 @@ function solution(arr) {
 
 22. 짝수와 홀수
 
-22.1
-function solution(num) {
-  return num % 2 == 0 ? 'Even' : 'Odd';
-}
+	22.1
+	function solution(num) {
+	  return num % 2 == 0 ? 'Even' : 'Odd';
+	}
 
 
 23. 최대공약수와 최소공배수
 두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수
-23.1
-function solution(n, m) { 
-	let gcd = getGCD(n, m) 
-	let lcm = m * n / gcd return [gcd, lcm] 
-} 
-function getGCD(a, b){ 
-	return a%b ? getGCD(b, a%b) : b 
-}
+	23.1
+	function solution(n, m) { 
+		let gcd = getGCD(n, m) 
+		let lcm = m * n / gcd return [gcd, lcm] 
+	} 
+	function getGCD(a, b){ 
+		return a%b ? getGCD(b, a%b) : b 
+	}
 
-23.2
-function solution(n, m) {
-  function u(n, m) { return m % n ? u(m % n, n) : n; }
-  const gcd = u(n, m);
-  return [gcd, n * m / gcd];
-}
+	23.2
+	function solution(n, m) {
+	  function u(n, m) { return m % n ? u(m % n, n) : n; }
+	  const gcd = u(n, m);
+	  return [gcd, n * m / gcd];
+	}
 
 
 24. 콜라츠 추측 
@@ -349,79 +349,79 @@ function solution(n, m) {
 2. 결과로 나온 수에 같은 작업을 1이 될 때까지 반복합니다.
 예) 입력된 수가 6이라면 6→3→10→5→16→8→4→2→1 이 되어 총 8번 만에 1이 됩니다. 위 작업을 몇 번이나 반복해야하는지 반환하는 함수
 
-24.1
-function solution(num, count = 0) {
-    return count === 500 
-        ? -1 
-        : num === 1
-            ? count
-            : solution(num % 2 ? num * 3 + 1 : num / 2, count + 1);
-}
+	24.1
+	function solution(num, count = 0) {
+	    return count === 500 
+		? -1 
+		: num === 1
+		    ? count
+		    : solution(num % 2 ? num * 3 + 1 : num / 2, count + 1);
+	}
 
 25. 평균 구하기
 정수를 담고 있는 배열 arr의 평균값을 return하는 함수
 
-25.1
-function solution(arr) {
-    var answer = 0;
-    for(var i=0; i<arr.length; i++){
-        answer += arr[i];
-    }
-    return answer/arr.length;
-}
+	25.1
+	function solution(arr) {
+	    var answer = 0;
+	    for(var i=0; i<arr.length; i++){
+		answer += arr[i];
+	    }
+	    return answer/arr.length;
+	}
 
-25.2
-function solution(arr) {
-    return arr.reduce((a, b) => a + b) / arr.length;
-}
+	25.2
+	function solution(arr) {
+	    return arr.reduce((a, b) => a + b) / arr.length;
+	}
 
 26. 하샤드 수
 x의 자릿수의 합으로 x가 나눠 떨어지면 x는 하샤드 수입니다. 
 예) 18의 자리수의 합은 1 + 8 = 9이고, 18은 9로 나눠 떨어지므로 18은 하샤드 수인거죠.
 일단 자릿수를 쪼개서 더하는 것부터 합시다. split과 reduce면 되죠.
-26.1
-function solution(x) {
-    var answer = true;    
-    var n = String(x).split('').reduce((a, b) => Number(a) + Number(b));
-    
-    answer = x % n == 0 ? true : false;
-    
-    return answer;
-}
+
+	26.1
+	function solution(x) {
+	    var answer = true;    
+	    var n = String(x).split('').reduce((a, b) => Number(a) + Number(b));
+
+	    answer = x % n == 0 ? true : false;
+
+	    return answer;
+	}
 
 27. 핸드폰 번호 가리기
 전화번호 뒷 4자리를 빼고 나머지를 전부 *로 바꾸는 문제입니다.
 뒷 네자리를 떼내고 앞은 다 *로 바꾼 뒤 다시 붙이면됨
 
-27.1
-function solution(phone_number) {
-    return '*'.repeat(phone_number.length - 4) + phone_number.slice(-4);
-}
+	27.1
+	function solution(phone_number) {
+	    return '*'.repeat(phone_number.length - 4) + phone_number.slice(-4);
+	}
 
 28. 행렬의 덧셈
 [[1,2],[2,3]]과 [[3,4],[5,6]]이 있으면 [[4,6],[7,9]]가 됩니다. 끼리끼리 더하면 됩니다.
 
-28.1
-cosnt solution = (arr1, arr2) => {
-  return arr1.map((arr, i) => arr.map((v, j) => v + arr2[i][j]))
-}
+	28.1
+	cosnt solution = (arr1, arr2) => {
+	  return arr1.map((arr, i) => arr.map((v, j) => v + arr2[i][j]))
+	}
 
 29. x만큼 간격이 있는 n개의 숫자 
 x의 배수를 n개 나열하면 됩니다. 2와 5면 [2,4,6,8,10]이고 -4와 2면 [-4,-8]입니다.
 
-29.1
-function solution(x, n) {
-    return Array(n).fill(x).map((v, i) => (i + 1) * v)
-}
+	29.1
+	function solution(x, n) {
+	    return Array(n).fill(x).map((v, i) => (i + 1) * v)
+	}
 
 30. 직사각형 별찍기
 5와 3이 주어지면 5열3행의 별을 찍으면 됩니다.
 
-30.1
-function solution(a, b) {
-  return Array(b).fill().map(() => '*'.repeat(a)).join('\n');
-}
-
+	30.1
+	function solution(a, b) {
+	  return Array(b).fill().map(() => '*'.repeat(a)).join('\n');
+	}
 
 
 레벨2
