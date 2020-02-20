@@ -96,6 +96,7 @@ Level 1 1번~10번
 
 	6.2 문자열로 구성된 리스트 strings와, 정수 n이 주어졌을 때, 각 문자열의 인덱스 n번째 글자를 기준으로 오름차순 정렬하려 합니다. 
 	예를 들어 strings가 [sun, bed, car]이고 n이 1이면 각 단어의 인덱스 1의 문자 u, e, a로 strings를 정렬합니다.
+	
 	function solution(strings, n) {
 	    strings.sort(function(a,b){
 		var first = a[n];
@@ -176,27 +177,27 @@ Level 1 1번~10번
 11. 소수 찾기 
 1~n 사이의 소수의 개수를 반환
 
-11.1
-function solution(n) {
+	11.1
+	function solution(n) {
 
-	let results = [];
-	
-	// 1과 n 사이의 숫자 중에 소수를 구하기 우ㅟ한 반복문
-	for (let i=1; i <= n ; i++) {
-		let isPrimeNumber = true;
-		
-		for (let j=2; j < i; j++) {
-			if(i % j === 0) {
-			 isPrimeNumber = false;
+		let results = [];
+
+		// 1과 n 사이의 숫자 중에 소수를 구하기 우ㅟ한 반복문
+		for (let i=1; i <= n ; i++) {
+			let isPrimeNumber = true;
+
+			for (let j=2; j < i; j++) {
+				if(i % j === 0) {
+				 isPrimeNumber = false;
+				}
+			}
+			if(isPrimeNumber) {
+				results.push(i);
 			}
 		}
-		if(isPrimeNumber) {
-			results.push(i);
-		}
+
+		return results;
 	}
-	
-	return results;
-}
 
 12. 수박수박수박수박수 
 3이면 수박수, 4면 수박수박, 5면 수박수박수를 리턴하면 됩니다.
@@ -299,21 +300,21 @@ n이 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, 아니라면 -1�
 arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수
 예를들어 arr이 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, [10]면 [-1]을 리턴
 
-21.1
-function solution(arr) {
-    var answer = [];
-    if(arr.length <= 1){
-       answer[0] = -1;
-    }
-    else{
-        arr.splice(arr.indexOf(Math.min.apply(null, arr)),1);
-		
-		//arr.splice(arr.indexOf(Math.min(...arr)),1);
-		
-        answer = arr;
-    }
-    return answer;
-}
+	21.1
+	function solution(arr) {
+	    var answer = [];
+	    if(arr.length <= 1){
+	       answer[0] = -1;
+	    }
+	    else{
+		arr.splice(arr.indexOf(Math.min.apply(null, arr)),1);
+
+			//arr.splice(arr.indexOf(Math.min(...arr)),1);
+
+		answer = arr;
+	    }
+	    return answer;
+	}
 
 22. 짝수와 홀수
 
