@@ -2,6 +2,7 @@
 Level 1 1번~10번
 
 1. 2016년 a월 b일은 무슨 요일일까요?라는 문제
+	
 	1.1
 	function solution(a, b) {
 	  return ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'][new Date(2016, a - 1, b).getDay()];
@@ -15,6 +16,7 @@ Level 1 1번~10번
 	return dayOfWeek;
 
 2. 가운데 글자 가져오기 : abcde에서는 c를 가져오고 qwer에서는 we 두 글자를 가져오는 문제
+	
 	2.1
 	function solution(s) {
 	  return s.substr(Math.ceil(s.length / 2) - 1, s.length % 2 === 0 ? 2 : 1);
@@ -141,14 +143,14 @@ Level 1 1번~10번
 8. 문자열 내림차순으로 배치하기 
 문자열을 역순으로 정렬합니다. 대문자는 소문자보다 뒤에 위치해야 합니다. 예를 들어 Zbcdefg는 gfedcbZ가 됩니다.
 
-8.1
-function solution(s) {
-// 1. 문자열을 배열로 쪼갠다.
-// 2. sort메소드로 순차적으로 나열해준다. 
-// 3. reverse메소드로 반전시켜준다. (역순 나열)
-// 4. join메소드로 문자열로 바꿔줘서 반환한다.
-    return s.split('').sort().reverse().join('');
-}
+	8.1
+	function solution(s) {
+	// 1. 문자열을 배열로 쪼갠다.
+	// 2. sort메소드로 순차적으로 나열해준다. 
+	// 3. reverse메소드로 반전시켜준다. (역순 나열)
+	// 4. join메소드로 문자열로 바꿔줘서 반환한다.
+	    return s.split('').sort().reverse().join('');
+	}
 
 9. 문자열 다루기 기본
 문자열의 길이가 4 또는 6이고 숫자로만 구성되어 있는지 확인합니다.
